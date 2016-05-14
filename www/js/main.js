@@ -92,11 +92,15 @@ function totalPasien() {
   var dataRef = new Firebase(url);
 
   // Friendly message
-  alert('Syncing data..');
+  if (navigator.online) {
+    alert('Syncing data..');
 
-  // Show data
-   dataRef.once('value', function(snapshot) {
-    var data = snapshot.numChildren();
-    alert('Jumlah Pasien:' + data);
-  });
+    // Show data
+     dataRef.once('value', function(snapshot) {
+      var data = snapshot.numChildren();
+      alert('Jumlah Pasien:' + data);
+    });
+  } else {
+    alert('Anda offline')
+  }
 }
