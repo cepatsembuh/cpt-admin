@@ -44,9 +44,9 @@ function link(page) {
 function updateBed() {
   var username = $('#username').val(),
       tipe = $('#tipe').val(),
-      breanna = $('#breanna').val(),
-      brea = $('#brea').val(),
-      yde = $('#yde').val();
+      breanna = $('#kamar_1').val(),
+      brea = $('#kamar_2').val(),
+      yde = $('#kamar_3').val();
 
   if (username === '' || tipe === '') {
     alert('Mohon isi semua input');
