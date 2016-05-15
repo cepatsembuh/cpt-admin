@@ -92,6 +92,7 @@ function totalPasien() {
   // Firebase ref
   var url = dataUrl + tipe + '/faskes/' + username + '/pasien';
   var dataRef = new Firebase(url);
+  console.log('URL: ' + dataRef);
 
   dataRef.once('value', function(snapshot) {
    var data = snapshot.numChildren();
