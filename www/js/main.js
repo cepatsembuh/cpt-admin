@@ -72,8 +72,7 @@ function updateBed() {
       tiga: crush_on_brea
     }, function(error){
       if (!error) {
-        // Reload page
-        location.reload();
+        alert('Data ter-update');
       } else {
         // Error handler
         alert('Gagal meng-update data')
