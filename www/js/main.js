@@ -86,8 +86,8 @@ function updateBed() {
 
 function totalPasien() {
   // Get input value
-  var username = $('#username').val(),
-      tipe = $('#tipe').val();
+  var username = $('#jacob').val(),
+      tipe = $('#sartorius').val();
 
   // Firebase ref
   var url = dataUrl + tipe + '/faskes/' + username + '/pasien';
