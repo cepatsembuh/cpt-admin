@@ -6,29 +6,98 @@
     <title></title>
 
     <link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <nav>
       <div class="nav-wrapper">
-        <a class="brand-logo">Title</a>
+        <a class="brand-logo">Admin</a>
       </div>
     </nav>
     <br>
     <div class="row">
        <div class="col s12">
-         <div id="test1" class="col s12"><img src="http://placehold.it/250x150?text=Image" class="image"/><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-         <div id="test2" class="col s12"><img src="http://placehold.it/250x150?text=Image" class="image"/><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-         <div id="test4" class="col s12"><img src="http://placehold.it/250x150?text=Image" class="image"/><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-         <ul class="tabs">
-           <li class="tab col s3"><a href="#test1">Test 1</a></li>
-           <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
-           <li class="tab col s3"><a href="#test4">Test 3</a></li>
-         </ul>
+         <div id="traffic" class="col s12">
+           <div class="row" align="center">
+             <div class="col-md-3">
+                <h3>Puskesmas</h3>
+                <button class="waves-effect waves-light btn" onclick="getPasien('puskesmas')">Pasien</button>
+                <button class="waves-effect waves-light btn" onclick="getFaskes('puskesmas')">Faskes</button>
+              </div>
+              <br>
+              <hr>
+              <div class="col-md-3">
+                <h3>RSUD</h3>
+                <button class="waves-effect waves-light btn" onclick="getPasien('rsud')">Pasien</button>
+                <button class="waves-effect waves-light btn" onclick="getFaskes('rsud')">Faskes</button>
+              </div>
+              <br>
+              <hr>
+              <div class="col-md-3">
+                <h3>RSUK</h3>
+                <button class="waves-effect waves-light btn" onclick="getPasien('rsuk')">Pasien</button>
+                <button class="waves-effect waves-light btn" onclick="getFaskes('rsuk')">Faskes</button>
+              </div>
+              <br>
+              <hr>
+              <div class="col-md-3">
+                <h3>RSS</h3>
+                <button class="waves-effect waves-light btn" onclick="getPasien('rss')">Pasien</button>
+                <button class="waves-effect waves-light btn" onclick="getFaskes('rss')">Faskes</button>
+              </div>
+           </div>
+         </div>
+         <div id="bed" class="col s12">
+           <div class="input-field">
+              <input placeholder="Username Faskes" id="username" type="text" class="validate">
+              <label for="username">Username Faskes</label>
+            </div><br>
+            <label for="tipe">Tipe Faskes</label>
+            <select id="tipe" class="browser-default">
+              <option value="rsud">RSUD</option>
+              <option value="rsuk">RSUK</option>
+              <option value="rss">RSS</option>
+            </select><br>
+            <div class="input-field">
+              <input placeholder="Data Terbaru Kamar I" id="kamar_1" type="text" class="validate">
+              <label for="kamar_1">Data Terbaru Kamar I</label>
+            </div><br>
+            <div class="input-field">
+              <input placeholder="Data Terbaru Kamar II" id="kamar_2" type="text" class="validate">
+              <label for="kamar_2">Data Terbaru Kamar II</label>
+            </div><br>
+            <div class="input-field">
+              <input placeholder="Data Terbaru Kamar III" id="kamar_3" type="text" class="validate">
+              <label for="kamar_3">Data Terbaru Kamar III</label>
+            </div>
+            <center><button class="btn waves-effect waves-light" type="submit" onclick="updateBed()" name="action">Submit</button></center>
+         </div>
+         <div id="jumlah" class="col s12">
+           <div class="input-field">
+             <input placeholder="Username Faskes" id="jacob" type="text" class="validate">
+             <label for="username">Username Faskes</label>
+           </div><br>
+           <label for="tipe">Tipe Faskes</label>
+           <select class="browser-default" id="sartorius">
+            <option value="puskesmas">Puskesmas</option>
+            <option value="rsud">RSUD</option>
+            <option value="rsuk">RSUK</option>
+            <option value="rss">RSS</option>
+          </select>
+          <br>
+          <center><button class="btn waves-effect waves-light" onclick="totalPasien()" name="action">Submit</button></center>
+         </div>
        </div>
      </div>
+     <ul class="tabs">
+       <li class="tab col s3"><a class="active" href="#traffic">Traffic</a></li>
+       <li class="tab col s3"><a href="#bed">Update Bed</a></li>
+       <li class="tab col s3"><a href="#jumlah">Jumlah</a></li>
+     </ul>
 
     <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
     <script src="bower_components/Materialize/dist/js/materialize.js" charset="utf-8"></script>
+    <script src="bower_components/firebase/firebase.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
   </body>
 </html>
