@@ -2,7 +2,10 @@
 * Cepat Sembuh v1.0
 * Copyright 2016 Cepat Sembuh
 */
-var dataUrl = 'http://cepatsembuh.firebaseio.com/';
+var dataUrl = 'http://cepatsembuh.firebaseio.com/',
+    progress = 'Syncing data..',
+    success = 'Data ter-update',
+    fail = 'Gagal meng-update data';
 
 document.addEventListener('deviceready', function () {
     Firebase.goOnline();
@@ -13,7 +16,7 @@ function getPasien(tipe) {
   var dataRef = new Firebase(dataUrl + tipe + '/pasien');
 
   // Friendly message
-  alert('Syncing data..');
+  alert(wait);
 
   // Show data
   dataRef.once('value', function(snapshot) {
@@ -27,7 +30,7 @@ function getFaskes(tipe) {
   var dataRef = new Firebase(dataUrl + tipe + '/faskes');
 
   // Friendly message
-  alert('Syncing data..');
+  alert(wait);
 
   // Show data
   dataRef.once('value', function(snapshot) {
@@ -72,10 +75,10 @@ function updateBed() {
       tiga: crush_on_brea
     }, function(error){
       if (!error) {
-        alert('Data ter-update');
+        alert(success);
       } else {
         // Error handler
-        alert('Gagal meng-update data')
+        alert(error)
       }
     });
   }
@@ -95,9 +98,9 @@ function totalPasien() {
    alert('Jumlah Pasien:' + data);
   }, function(error) {
    if (!error) {
-     alert('Data ter-update')
+     alert(success)
    } else {
-     alert('Gagal meng-update data')
+     alert(error)
    }
  });
 }
