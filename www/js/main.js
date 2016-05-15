@@ -90,16 +90,14 @@ function totalPasien() {
   var url = dataUrl + tipe + '/faskes/' + username + '/pasien';
   var dataRef = new Firebase(url);
 
-  // Friendly message
-  if (navigator.online) {
-    alert('Syncing data..');
-
-    // Show data
-     dataRef.once('value', function(snapshot) {
-      var data = snapshot.numChildren();
-      alert('Jumlah Pasien:' + data);
-    });
-  } else {
-    alert('Anda offline')
-  }
+  dataRef.once('value', function(snapshot) {
+   var data = snapshot.numChildren();
+   alert('Jumlah Pasien:' + data);
+  }, function(error) {
+   if (!error) {
+     alert('Data ter-update')
+   } else {
+     alert('Gagal meng-update data')
+   }
+ });
 }
