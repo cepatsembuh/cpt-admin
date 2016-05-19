@@ -16,7 +16,7 @@ function getPasien(tipe) {
   var dataRef = new Firebase(dataUrl + tipe + '/pasien');
 
   // Friendly message
-  alert(wait);
+  alert(progress);
 
   // Show data
   dataRef.once('value', function(snapshot) {
@@ -30,7 +30,7 @@ function getFaskes(tipe) {
   var dataRef = new Firebase(dataUrl + tipe + '/faskes');
 
   // Friendly message
-  alert(wait);
+  alert(progress);
 
   // Show data
   dataRef.once('value', function(snapshot) {
@@ -78,7 +78,7 @@ function updateBed() {
         alert(success);
       } else {
         // Error handler
-        alert(error)
+        alert(fail)
       }
     });
   }
@@ -101,7 +101,7 @@ function totalPasien() {
    if (!error) {
      alert(success)
    } else {
-     alert(error)
+     alert(fail)
    }
  });
 }
