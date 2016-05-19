@@ -11,4 +11,14 @@
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="https://cepatsembuh.firebaseio.com" />
+    <platform name="android">
+        <icon src="res/mipmap-mdpi/ic_launcher.png" density="mdpi"/>
+        <icon src="res/mipmap-hdpi/ic_launcher.png" density="hdpi"/>
+        <icon src="res/mipmap-xhdpi/ic_launcher.png" density="xhdpi"/>
+        <icon src="res/mipmap-xxhdpi/ic_launcher.png" density="xxhdpi"/>
+        <icon src="res/mipmap-xxxhdpi/ic_launcher.png" density="xxxhdpi"/>
+        <splash src="res/splash.png" density="port-mdpi"/>
+        <splash src="res/splash.png" density="port-hdpi"/>
+        <splash src="res/splash.png" density="port-xhdpi"/>
+    </platform>
 </widget>
