@@ -88,11 +88,28 @@
           <center><button class="btn waves-effect waves-light" onclick="totalPasien()" name="action">Submit</button></center>
          </div>
        </div>
+       <div id="restart" class="col s12">
+           <div class="input-field">
+             <input placeholder="Username Faskes" id="breanna" type="text" class="validate">
+             <label for="username">Username Faskes</label>
+           </div><br>
+           <label for="tipe">Tipe Faskes</label>
+           <select class="browser-default" id="yde">
+            <option value="puskesmas">Puskesmas</option>
+            <option value="rsud">RSUD</option>
+            <option value="rsuk">RSUK</option>
+            <option value="rss">RSS</option>
+          </select>
+          <br>
+          <center><button class="btn waves-effect waves-light" onclick="brea_yde()" name="action">Submit</button></center>
+         </div>
+       </div>
      </div>
      <ul class="tabs">
-       <li class="tab col s3"><a class="active" href="#traffic">Traffic</a></li>
-       <li class="tab col s3"><a href="#bed">Update Bed</a></li>
-       <li class="tab col s3"><a href="#jumlah">Jumlah</a></li>
+       <li class="tab col s2"><a class="active" href="#traffic">Traffic</a></li>
+       <li class="tab col s2"><a href="#bed">Update Bed</a></li>
+       <li class="tab col s2"><a href="#jumlah">Jumlah</a></li>
+       <li class="tab col s2"><a href="#restart">Restart</a></li>
      </ul>
 
     <script src="bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
