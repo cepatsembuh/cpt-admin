@@ -21,7 +21,7 @@ function getPasien(tipe) {
   // Show data
   dataRef.once('value', function(snapshot) {
     var data = snapshot.numChildren();
-    alert('The total is:' + data);
+    alert('The total is: ' + data);
   });
 }
 
@@ -35,7 +35,7 @@ function getFaskes(tipe) {
   // Show data
   dataRef.once('value', function(snapshot) {
     var data = snapshot.numChildren();
-    alert('The total is:' + data);
+    alert('The total is: ' + data);
   });
 }
 
