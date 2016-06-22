@@ -45,7 +45,7 @@ function link(page) {
 }
 
 function updateBed() {
-  var username = $('#username').val(),      
+  var username = $('#username').val(),
       breanna = $('#kamar_1').val(),
       brea = $('#kamar_2').val(),
       yde = $('#kamar_3').val();
@@ -85,7 +85,7 @@ function updateBed() {
 
 function totalPasien() {
   // Get input value
-  var username = $('#jacob').val();   
+  var username = $('#jacob').val();
 
   // Firebase ref
   var url = dataUrl + 'puskesmas' + '/faskes/' + username + '/pasien';
@@ -117,6 +117,8 @@ function brea_yde() {
 
   // Update the data
   dataRef.update({
-    antrian: 0
+    kia: 0,
+    bpg: 0,
+    bpu: 0
   })
 }
