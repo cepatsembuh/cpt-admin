@@ -7,6 +7,15 @@ var dataUrl = 'http://cepatsembuh.firebaseio.com/',
     success = 'Data ter-update',
     fail = 'Gagal meng-update data';
 
+// Dates
+var date = new Date(),
+    year = date.getFullYear(),
+    month = date.getMonth() + 1,
+    day = date.getDate(),
+    hour = date.getHours(),
+    minute = date.getMinutes(),
+    right_now = year + '-' + month + '-' + day;
+
 document.addEventListener('deviceready', function () {
     Firebase.goOnline();
 });
@@ -88,7 +97,7 @@ function totalPasien() {
   var username = $('#jacob').val();
 
   // Firebase ref
-  var url = dataUrl + 'puskesmas' + '/faskes/' + username + '/pasien';
+  var url = dataUrl + 'puskesmas' + '/faskes/' + username + '/' +right_now;
   var dataRef = new Firebase(url);
   console.log('URL: ' + dataRef);
 
